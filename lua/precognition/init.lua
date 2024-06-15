@@ -320,6 +320,7 @@ local function create_command()
         toggle = M.toggle,
         show = M.show,
         hide = M.hide,
+        visible = M.visible,
     }
 
     local function execute(args)
@@ -413,6 +414,11 @@ function M.toggle()
     else
         M.show()
     end
+end
+
+--- Expose visible value as subcommand return value
+function M.visible()
+    return visible
 end
 
 ---@param opts Precognition.PartialConfig
